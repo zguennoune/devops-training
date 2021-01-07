@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Récupération via l'api github de la liste des repos de l'organisation centreon
+allrepos=$(curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/orgs/centreon/repos?per_page=100 | jq '.[].name')
+#echo $allrepos
+echo "|---------------------------------------------------------------------------------------------|\n
+|-----------Liste des repositories de l'organisation Centreon disponibles sur Github-----------|\n
+|---------------------------------------------------------------------------------------------|"
+for i in $allrepos
+do
+	echo "| $i |"
+done
