@@ -5,8 +5,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Starting to build docker image'
-                  script {
-                    sh 'docker build . -t  centreonbuilder'
+                    script {
+                        sh 'docker build . -t  centreonbuilder'
+                        }
             }
         }
         stage('Test') {
