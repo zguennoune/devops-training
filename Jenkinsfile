@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                def rpmBuilderImage = docker.build("centreonrpmbuilder", "./Dockerfile")
+                echo 'Starting to build docker image'
+                  script {
+                    sh 'docker build . -t  centreonbuilder'
             }
         }
         stage('Test') {
