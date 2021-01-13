@@ -3,7 +3,6 @@
 # Usage of the script
 usage() {
     echo "Usage: ./runBuild.sh <SPEC FILE> <PLATFORM> <DEPLOYMENT>"
-    ls -l
     echo "<PLATFORM> should be Ubuntu if you are using Ubuntu or any other disribution using rpm and if you want to deploy it"
     exit 1
 }
@@ -18,6 +17,7 @@ SPEC="$1"
 PLATFORM="$2"
 DEPLOY="$3"
 # Building RPM and deploying the result of that build
+ls -l
 rpmbuild -ba --build-in-place --define "_topdir $(pwd)/rpm" $SPEC
 
 if [ $DEPLOY == "true" ]; then
