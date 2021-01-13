@@ -2,12 +2,12 @@
 
 # Usage of the script
 usage() {
-    echo "Usage: ./runBuild.sh <SPEC FILE> <DEPLOYMENT>"
+    echo "Usage: ./runBuild.sh <SPEC FILE>"
     exit 1
 }
 
 # Testing that there's only one argument
-if [ "$#" -ne 2 ]; then
+if [ "$#" -ne 1 ]; then
   usage;
 fi
 
