@@ -6,6 +6,7 @@ pipeline {
             steps {
                 echo 'Starting to build docker image'
                     script {
+                        sh 'docker rm centreonbuilder -f'
                         sh 'docker rmi centreonbuilder'
                         sh 'docker build . -t  centreonbuilder'
                         }
