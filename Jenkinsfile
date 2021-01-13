@@ -6,19 +6,14 @@ pipeline {
             steps {
                 echo 'Starting to build docker image'
                     script {
-                        sh 'id'
                         sh 'docker build . -t  centreonbuilder'
                         }
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploying...'
+                sh 'docker run --volume=$PWD:/src --workdir=/src centreonbuilder listcentreon.spec Ubuntu true'
             }
         }
     }
