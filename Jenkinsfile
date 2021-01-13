@@ -6,6 +6,7 @@ pipeline {
             steps {
                 echo 'Starting to build docker image'
                     script {
+                        sh 'id'
                         sh 'docker build . -t  centreonbuilder'
                         }
             }
