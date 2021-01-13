@@ -21,8 +21,7 @@ pipeline {
         }
     post {
         always {
-            archiveArtifacts artifacts: '/src/rpm/*', fingerprint: true
-            }
+           archiveArtifacts artifacts: '/src/rpm/*', fingerprint: true
         }
     }
 }
