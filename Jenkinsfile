@@ -13,7 +13,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                sh "docker run --volume "${env.WORKSPACE}:/src" centreonbuilder listcentreon.spec Ubuntu true"
+                sh 'docker run hello-world'
+                sh 'docker run --volume "${env.WORKSPACE}:/src" centreonbuilder listcentreon.spec Ubuntu true'
             }
         }
     }
