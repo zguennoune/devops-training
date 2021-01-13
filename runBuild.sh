@@ -20,7 +20,6 @@ DEPLOY="$3"
 ls -l
 pwd
 find . -name listcentreon.spec
-cd /src
 rpmbuild -ba --build-in-place --define "_topdir $(pwd)/rpm" $SPEC
 
 if [ $DEPLOY == "true" ]; then
