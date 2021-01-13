@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo 'Deploying...'
                 sh 'docker run hello-world'
-                sh 'docker run centreonbuilder listcentreon.spec Ubuntu true'
+                sh 'docker run -v "${env.PWD}:/src" centreonbuilder listcentreon.spec Ubuntu true'
             }
         }
     }
