@@ -18,7 +18,7 @@ pipeline {
                 sh 'docker rm helper'
                 sh 'docker rm builderrpm'
                 sh "docker run --name builderrpm -v jenkins-build:/src centreonbuilder:${BUILD_NUMBER} listcentreon.spec"
-                sh "docker cp builderrpm:/src/* ."
+                sh "docker cp builderrpm:/src/rpm/RPMS/noarch/listcentreon-1.0.0-1.el8.noarch.rpm ."
             }
         }
     }
