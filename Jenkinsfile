@@ -14,6 +14,7 @@ pipeline {
             steps {
                 echo 'Deploying...'
                 sh 'ls -l'
+                sh 'pwd'
                 sh 'docker run --volume $PWD:/src --workdir=/src centreonbuilder listcentreon.spec Ubuntu true'
             }
         }
