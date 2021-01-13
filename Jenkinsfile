@@ -15,7 +15,8 @@ pipeline {
                 echo 'Deploying...'
                 sh 'ls -l'
                 sh 'pwd'
-                sh 'docker run --volume $PWD:/src --workdir=/src centreonbuilder listcentreon.spec Ubuntu true'
+                sh 'printenv'
+                sh 'docker run --volume $PWD:/src centreonbuilder listcentreon.spec Ubuntu true'
             }
         }
     }
