@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo 'Deploying...'
                 sh 'ls -l'
-                sh 'docker run centreonbuilder listcentreo.spec Ubuntu true'
+                sh 'docker run centreonbuilder listcentreon.spec Ubuntu true'
             }
         }
     }
