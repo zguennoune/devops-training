@@ -17,9 +17,6 @@ SPEC="$1"
 PLATFORM="$2"
 DEPLOY="$3"
 # Building RPM and deploying the result of that build
-ls -l
-pwd
-find . -name listcentreon.spec
 rpmbuild -ba --build-in-place --define "_topdir $(pwd)/rpm" $SPEC
 
 if [ $DEPLOY == "true" ]; then
