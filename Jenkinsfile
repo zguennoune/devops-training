@@ -19,6 +19,7 @@ pipeline {
                 sh "docker run -v jenkins-build:/src centreonbuilder:${BUILD_NUMBER} listcentreon.spec"
             }
         }
+    }
     post {
         always {
            archiveArtifacts artifacts: '/src/rpm/*', fingerprint: true
