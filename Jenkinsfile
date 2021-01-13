@@ -16,6 +16,7 @@ pipeline {
                 sh 'docker run -v jenkins-build:/data --name helper busybox true'
                 sh 'docker cp . helper:/data'
                 sh 'docker rm helper'
+                sh 'docker rm builderrpm'
                 sh "docker run --name builderrpm -v jenkins-build:/src centreonbuilder:${BUILD_NUMBER} listcentreon.spec"
                 sh "docker cp builderrpm:/src/* ."
             }
