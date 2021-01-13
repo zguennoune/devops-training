@@ -98,4 +98,13 @@ pipeline {
            archiveArtifacts artifacts: '*', fingerprint: true
         }
     }
-}```
+}
+```
+
+The dockerfile used to build and run Jenkins is also available in that
+repository. It does not contains the job described here but it was the 
+environment used to launch that job. 
+
+# Thank you
+
+Live demonstration soon... 
