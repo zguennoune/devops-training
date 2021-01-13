@@ -13,10 +13,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                sh 'ls -l'
-                sh 'pwd'
-                sh 'printenv'
-                sh 'docker run --volumes-from //"${env.WORKSPACE}://src" centreonbuilder listcentreon.spec Ubuntu true'
+                sh "docker run --volume "${env.WORKSPACE}:/src" centreonbuilder listcentreon.spec Ubuntu true"
             }
         }
     }
