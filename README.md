@@ -59,6 +59,12 @@ docker run --volume=<PWD>:/src --workdir=/src centreonbuilder:0.1 liscentreon.sp
 This spec file aimed at listcentreon shell script that list the Centreon
 organisation repositories. 
 
+# Deploy the rpm
+
+```shell
+./runDeploy 
+```
+
 # CI integration
 
 That sample project is able to run in a Jenkins thanks to that jenkinsfile that 
