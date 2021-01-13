@@ -3,6 +3,7 @@
 # Usage of the script
 usage() {
     echo "Usage: ./runBuild.sh <SPEC FILE> <PLATFORM> <DEPLOYMENT>"
+    ls -l
     echo "<PLATFORM> should be Ubuntu if you are using Ubuntu or any other disribution using rpm and if you want to deploy it"
     exit 1
 }
