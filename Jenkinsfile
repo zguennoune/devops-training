@@ -16,7 +16,7 @@ pipeline {
                 sh 'ls -l'
                 sh 'pwd'
                 sh 'printenv'
-                sh "docker run --volumes-from ${env.WORKSPACE}:/src centreonbuilder listcentreon.spec Ubuntu true"
+                sh "docker run --volumes-from ${env.WORKSPACE}://src centreonbuilder listcentreon.spec Ubuntu true"
             }
         }
     }
